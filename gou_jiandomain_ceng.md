@@ -33,6 +33,7 @@ public class ForecastDataMapper {
     fun convertFromDataModel(forecast: ForecastResult): ForecastList {
         return ForecastList(forecast.city.name, forecast.city.country,
                 convertForecastListToDomain(forecast.list))
+		
     private fun convertForecastListToDomain(list: List<Forecast>):
             List<ModelForecast> {
         return list.map { convertForecastItemToDomain(it) }
